@@ -15,6 +15,6 @@ jobs:
      - name: Run tests inside the container
        run: docker images 
      - name: Run console 
-       run: docker run -it hello-world bash 
+       run: docker run -it hello-world /bin/bash/
      - name: Run container 
        run: docker run hello-world 
