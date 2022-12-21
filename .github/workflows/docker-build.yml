@@ -19,6 +19,6 @@ jobs:
      - name: Run container 
        run: docker run hello-world 
      - name: Tag image
-       run: docker tag 
+       run: docker tag hello-world:latest tuhao910/python/hello-world:latest
      - name: Push image 
-       run: docker push tuhao910/python:
+       run: docker push tuhao910/python/hello-world:latest
