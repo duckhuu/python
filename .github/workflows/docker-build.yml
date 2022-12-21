@@ -18,3 +18,7 @@ jobs:
 #       run: docker run -it hello-world /bin/bash/
      - name: Run container 
        run: docker run hello-world 
+     - name: Tag image
+       run: docker tag 
+     - name: Push image 
+       run: docker push tuhao910/python:
