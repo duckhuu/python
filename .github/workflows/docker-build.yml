@@ -29,5 +29,5 @@ jobs:
      - name: Run tests inside the container
        run: docker images
      - name: Push image 
-       run: docker push tuhao910/python/hello-world:latest
+       run: docker push tuhao910/python:tuhao910/python/hello-world:latest
             
