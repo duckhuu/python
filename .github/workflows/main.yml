@@ -1,0 +1,20 @@
+name: Docker build and test
+
+on:
+  workflow_dispatch 
+# you can trigger on anything you want
+
+jobs:
+  build:
+   runs-on: ubuntu-latest
+  
+   steps:
+     - uses: actions/checkout@v2
+     - name: Build Docker image 
+       run: docker build -t hello-world .
+     - name: Run tests inside the container
+       run: docker images 
+     - name: Run console 
+       run: docker run -it hello-world bash 
+     - name: Run container 
+       run: docker run hello-world 
