@@ -4,6 +4,6 @@ from time import sleep
 #  every 1 second foever
 #while True:
 #print("Hello, World")
-print("Chào Nguyễn Văn Nguyên Thạnh")
-print("Cháu Chào Cô")
+print("Chào Ngô Minh Phương")
+print("Hello GitOps")
 #    sleep(1)
