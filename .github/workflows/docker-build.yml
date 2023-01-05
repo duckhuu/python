@@ -29,7 +29,7 @@ jobs:
      - name: Print
        run: echo ${{ secrets.DOCKERHUB_USERNAME }}
      - name: so sanh
-       if: ${{ env.DOCKERHUB_USERNAME != 'tuhao910' }}
+       if: ${{ env.abc != 'tuhao910' }}
        run: echo "testing so sanh"
      - name: Run tests inside the container
        run: docker images
