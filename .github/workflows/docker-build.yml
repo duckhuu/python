@@ -26,6 +26,8 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
      - name: Tag image
        run: docker tag hello-world:latest ${{ secrets.DOCKERHUB_USERNAME }}/python:hello-world
+     - name: Print
+       run: echo ${{ secrets.DOCKERHUB_USERNAME }}
      - name: Run tests inside the container
        run: docker images
      - name: Push image 
