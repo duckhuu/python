@@ -28,6 +28,9 @@ jobs:
        run: docker tag hello-world:latest ${{ secrets.DOCKERHUB_USERNAME }}/python:hello-world
      - name: Print
        run: echo ${{ secrets.DOCKERHUB_USERNAME }}
+     - name: so sanh
+       if: ${{ secrets.DOCKERHUB_USERNAME == 'tuhao910' }}
+       run: echo "testing so sanh"
      - name: Run tests inside the container
        run: docker images
      - name: Push image 
