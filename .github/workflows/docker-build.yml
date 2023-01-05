@@ -29,10 +29,10 @@ jobs:
      - name: Print
        run: echo ${{ secrets.DOCKERHUB_USERNAME }}
      - name: so sanh
-       if: ${{ env.tuhao910 == "tuhao910" }}
+       if: ${{ env.tuhao910 == tuhao910 }}
        run: echo ${{ secrets.DOCKERHUB_USERNAME }}
      - name: so sanh1
-       if: ${{ env.abc != "tuhao910" }}
+       if: ${{ env.abc != 'tuhao910' }}
        run: echo "testing"
      - name: Run tests inside the container
        run: docker images
