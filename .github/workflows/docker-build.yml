@@ -41,7 +41,7 @@ jobs:
      - name: Push image 
        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/python:hello-world
      - name: terraform 
-       run: terrafrom init
+       run: terraform init
      - name: terraform plan 
        run: terraform plan 
      - name: terrafarom apply
