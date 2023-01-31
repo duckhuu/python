@@ -1,7 +1,7 @@
 provider "aws" {
 	region	= "ap-southeast-1"
-	access_key	= ""
-	secret_key	= ""
+	access_key	= ${{ secrets.access_key }}
+	secret_key	= ${{ secrets.secret_key }}
 }  
 
 provider "azurerm" {
