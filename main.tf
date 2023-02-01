@@ -14,7 +14,7 @@ provider "google" {
 }
 
 resource "aws_instance" "web-server" {
-	ami	= "ami-0e2e4c9e55712f9e3"
+	ami	= "ami-08be951cec06726be"
 	instance_type = "t2.micro"
 #	vpc_security_group_ids = "sg-0a4b395904af2bd53"
 #	subnet_id = ""
