@@ -25,5 +25,6 @@ resource "aws_instance" "web-server" {
 
 output "instance_ip_addr" {
 	value = "aws_instance.web-server.private_ip"
+	value = "aws_instance.web-server.public_ip"
 	description = "private ip of server"
 }
