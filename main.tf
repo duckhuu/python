@@ -28,3 +28,8 @@ output "instance_ip_addr" {
 	value = "aws_instance.web-server.public_ip"
 	description = "private ip of server"
 }
+
+output "instance_ip_addr" {
+	value = "aws_instance.web-server.public_ip"
+	description = "public ip of server"
+}
