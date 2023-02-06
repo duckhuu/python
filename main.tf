@@ -22,7 +22,7 @@ variable "public" {
 variable "private" {
 # default = aws_instance.web-server.private_ip
   type = string
-#}
+}
 
 resource "aws_instance" "web-server" {
 	ami	= "ami-08be951cec06726be"
