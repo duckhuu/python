@@ -50,8 +50,9 @@ resource "aws_instance" "web-server" {
 }
 
 resource "null_resource" "unit_test" {
-	provisioner "local-exec"
+	provisioner "local-exec" {
 		command = "chmod 777 unit.sh && /bin/sh unit.sh"
+	}
 }
 
 #output "instance_ip_addr_private" {
