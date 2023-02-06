@@ -19,8 +19,15 @@ resource "aws_instance" "web-server" {
 #	vpc_security_group_ids = "sg-0a4b395904af2bd53"
 #	subnet_id = ""
 	tags = {
-	 Name = "web server"
+	 Name = "web-server"
 	}
+	user_data - <<-EOF
+	 #!/bin/bash
+	 apt install nginx
+	 /etc/init.d/nginx restart
+	 EOF
+	 
+	
 }
 
 output "instance_ip_addr_private" {
