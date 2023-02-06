@@ -13,6 +13,10 @@ provider "google" {
 	region = "us-central1"
 }
 
+variables 
+ public = aws_instance.web-server.public_ip
+ private = aws_instance.web-server.private_ip
+
 resource "aws_instance" "web-server" {
 	ami	= "ami-08be951cec06726be"
 	instance_type = "t2.micro"
@@ -25,6 +29,7 @@ resource "aws_instance" "web-server" {
 	 #!/bin/bash
 	 apt install nginx
 	 /etc/init.d/nginx restart
+	 curl http://$public
 	 EOF
 }
 
