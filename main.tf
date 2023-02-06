@@ -55,6 +55,12 @@ resource "null_resource" "unit_test" {
 	}
 }
 
+resource "null_resource" "unit_testing" {
+	provisioner "local-exec" {
+		command = echo ${instance_ip_addr_public}
+	}
+}
+
 #output "instance_ip_addr_private" {
 #	value = aws_instance.web-server.private_ip
 #	description = "private ip of server"
