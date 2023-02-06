@@ -6,7 +6,7 @@ provider "aws" {
 
 provider "azurerm" {
 	features {}
-	subscription_id = ${{ secrets.subscription_id }}
+#	subscription_id = ${{ secrets.subscription_id }}
 }
 
 provider "google" {
@@ -14,9 +14,13 @@ provider "google" {
 	region = "us-central1"
 }
 
-variable 
- public = aws_instance.web-server.public_ip
- private = aws_instance.web-server.private_ip
+variable "public" {
+ default = aws_instance.web-server.public_ip
+}
+
+variable "private" {
+ default = aws_instance.web-server.private_ip
+}
 
 resource "aws_instance" "web-server" {
 	ami	= "ami-08be951cec06726be"
