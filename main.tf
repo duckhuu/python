@@ -40,9 +40,9 @@ resource "aws_instance" "web-server" {
 	 #!/bin/bash
 	 apt install nginx
 	 /etc/init.d/nginx restart
-	 echo $public
-	 echo $private
-	 curl http://$public
+	 echo $instance_ip_addr_public
+	 echo $instance_ip_addr_private
+	 curl http://$instance_ip_addr_private
 	 EOF
 }
 
