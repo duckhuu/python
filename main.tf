@@ -17,13 +17,15 @@ provider "google" {
 variable "public" {
 # default = aws_instance.web-server.public_ip
   type = string
-  default = aws_instance.web-server.public_ip
+  default = "public_ip"
+  description = "EC2 Public IP"
 }
 
 variable "private" {
 # default = aws_instance.web-server.private_ip
   type = string
-  default = aws_instance.web-server.private_ip
+  default = "private_ip"
+  description = "EC2 private IP"
 }
 
 resource "aws_instance" "web-server" {
