@@ -51,7 +51,7 @@ resource "aws_instance" "web-server" {
 
 resource "null_resource" "unit_test" {
 	provisioner "local-exec"
-		command = "echo aws_instance.web-server.public_ip"
+		command = "chmod 777 unit.sh && /bin/sh unit.sh"
 }
 
 #output "instance_ip_addr_private" {
