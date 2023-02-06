@@ -57,7 +57,7 @@ resource "null_resource" "unit_test" {
 
 resource "null_resource" "unit_testing" {
 	provisioner "local-exec" {
-		command = echo ${instance_ip_addr_public}
+		command = "echo ${instance_ip_addr_public}"
 	}
 }
 
