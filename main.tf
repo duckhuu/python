@@ -37,7 +37,10 @@ resource "aws_instance" "web-server" {
 	 Name = "web-server"
 	}
 	provisioner "local-exec" {
-	  command = "curl http://$instance_ip_addr_public"
+	  command = "echo ${instance_ip_addr_public}"
+	}
+	provisioner "local-execute" {
+	  command = "curtl http://${instance_ip_addr_public}"
 	}
 	user_data = <<-EOF
 	 #!/bin/bash
