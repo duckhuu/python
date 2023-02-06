@@ -39,9 +39,6 @@ resource "aws_instance" "web-server" {
 	provisioner "local-exec" {
 	  command = "echo ${instance_ip_addr_public}"
 	}
-	provisioner "local-execute" {
-	  command = "curtl http://${instance_ip_addr_public}"
-	}
 	user_data = <<-EOF
 	 #!/bin/bash
 	 apt install nginx
