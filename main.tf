@@ -21,13 +21,11 @@ resource "aws_instance" "web-server" {
 	tags = {
 	 Name = "web-server"
 	}
-	user_data - <<-EOF
+	user_data = <<-EOF
 	 #!/bin/bash
 	 apt install nginx
 	 /etc/init.d/nginx restart
 	 EOF
-	 
-	
 }
 
 output "instance_ip_addr_private" {
