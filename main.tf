@@ -14,12 +14,14 @@ provider "google" {
 	region = "us-central1"
 }
 
-#variable "public" {
+variable "public" {
 # default = aws_instance.web-server.public_ip
-#}
+  type = string
+}
 
-#variable "private" {
+variable "private" {
 # default = aws_instance.web-server.private_ip
+  type = string
 #}
 
 resource "aws_instance" "web-server" {
