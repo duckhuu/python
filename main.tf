@@ -6,6 +6,7 @@ provider "aws" {
 
 provider "azurerm" {
 	features {}
+	subscription_id = ${{ secrets.subscription_id }}
 }
 
 provider "google" {
