@@ -81,7 +81,7 @@ resource "null_resource" "get_public_ip" {
 
 resource "null_resource" "get_public_dns" {
 	provisioner "local-exec" {
-		command = "chmod 777 unit.sh && /bin/sh unit.sh && echo ${aws_instance.web-server.public_dns} && echo ${aws_security_group.allow-http.security_group}"
+		command = "chmod 777 unit.sh && /bin/sh unit.sh && echo ${aws_instance.web-server.public_dns} && echo ${aws_security_group.allow_http_traffic.security_groups}"
 	}
 }
 
