@@ -18,7 +18,7 @@ output "instance_private_dns" {
 	description = "private dns of server"
 }
 
-#output "instance_security_group" {
-#	value = aws_security_group.allow-http.security_group
-#	description = "security group"
-#
+output "instance_security_group" {
+	value = aws_security_group.allow-http.name
+	description = "security group"
+}
