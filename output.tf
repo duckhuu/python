@@ -17,3 +17,8 @@ output "instance_private_dns" {
 	value = aws_instance.web-server.private_dns
 	description = "private dns of server"
 }
+
+output "instance_security_group" {
+	value = aws_security_group.allow-http.allow_http_traffic
+	description = "security group"
+}
