@@ -81,15 +81,15 @@ resource "null_resource" "get_public_ip" {
 
 resource "null_resource" "get_public_dns" {
 	provisioner "local-exec" {
-		command = "chmod 777 unit.sh && /bin/sh unit.sh && echo ${aws_instance.web-server.public_dns} && echo ${aws_security_group.allow_http_traffic.security_groups}"
+		command = "chmod 777 unit.sh && /bin/sh unit.sh && echo ${aws_instance.web-server.public_dns}"
 	}
 }
 
-resource "null_resource" "unit_test" {
-	provisioner "local-exec" {
-		command = "curl http://${aws_instance.web-server.public_ip}"
-	}
-}
+#resource "null_resource" "unit_test" {
+#	provisioner "local-exec" {
+#		command = "curl http://${aws_instance.web-server.public_ip}"
+#	}
+#}
 
 #output "instance_ip_addr_private" {
 #	value = aws_instance.web-server.private_ip
