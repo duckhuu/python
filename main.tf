@@ -53,7 +53,7 @@ resource "aws_security_group" "allow-http" {
 
 	name = "allow_http"
 	description = "allow http traffic"
-	vpc_id = "vpc-f7c49692"
+#	vpc_id = "vpc-f7c49692"
 	ingress {
 		description = "Allow port 80"
 		from_port = 80
