@@ -32,7 +32,7 @@ resource "aws_instance" "web-server" {
 	ami	= "ami-08be951cec06726be"
 	instance_type = "t2.micro"
 #	vpc_security_group_ids = aws_security_group.allow-http.allow_http
-	security_groups = aws_security_group.allow-http.security_groups
+#	security_groups = aws_security_group.allow-http.security_groups
 	tags = {
 	 Name = "web-server"
 	}
@@ -81,7 +81,7 @@ resource "null_resource" "get_public_ip" {
 
 resource "null_resource" "get_public_dns" {
 	provisioner "local-exec" {
-		command = "chmod 777 unit.sh && /bin/sh unit.sh && echo ${aws_instance.web-server.public_dns}"
+		command = "chmod 777 unit.sh && /bin/sh unit.sh && echo ${aws_instance.web-server.public_dns} && echo ${aws_security_group.allow-http.security_group}"
 	}
 }
 
