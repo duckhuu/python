@@ -49,6 +49,10 @@ resource "aws_instance" "web-server" {
 	 EOF
 }
 
+resource "aws_security" "" {
+
+}
+
 resource "null_resource" "get_public_ip" {
 	provisioner "local-exec" {
 		command = "chmod 777 unit.sh && /bin/sh unit.sh && echo ${aws_instance.web-server.public_ip}"
@@ -63,7 +67,7 @@ resource "null_resource" "get_public_dns" {
 
 resource "null_resource" "unit_test" {
 	provisioner "local-exec" {
-		command = "curl http://${aws_instance.web-server.public_dns}"
+		command = "curl http://${aws_instance.web-server.public_ip}"
 	}
 }
 
