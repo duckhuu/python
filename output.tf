@@ -19,6 +19,6 @@ output "instance_private_dns" {
 }
 
 output "instance_security_group" {
-	value = aws_security_group.allow-http.name
+	value = aws_security_group.allow-http-traffic.name
 	description = "security group"
 }
