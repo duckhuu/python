@@ -32,7 +32,7 @@ resource "aws_instance" "web-server" {
 	ami	= "ami-08be951cec06726be"
 	instance_type = "t2.micro"
 #	vpc_security_group_ids = "vpc-f7c49692"
-	security_groups = [aws_security_group.allow-http-traffic.id]
+	security_groups = [aws_security_group.allow-http-traffic.name]
 	tags = {
 	 Name = "web-server"
 	}
