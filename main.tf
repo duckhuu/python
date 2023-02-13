@@ -37,7 +37,7 @@ resource "aws_instance" "web-server" {
 	 Name = "web-server"
 	}
 	provisioner "local-exec" {
-	  command = "echo aws_instance.web-server.public_ip"
+	  command = "echo ${aws_instance.web-server.public_ip}"
 	}
 	user_data = <<-EOF
 	 #!/bin/bash
