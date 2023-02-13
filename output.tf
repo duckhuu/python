@@ -18,12 +18,12 @@ output "instance_private_dns" {
 	description = "private dns of server"
 }
 
-output "instance_security_group" {
+output "instance_security_group_id" {
 	value = aws_security_group.allow-web-traffic.id
 	description = "security group"
 }
 
-output "instance_security_group" {
+output "instance_security_group_name" {
 	value = aws_security_group.allow-web-traffic.name
 	description = "security group"
 }
