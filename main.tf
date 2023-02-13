@@ -14,19 +14,19 @@ provider "google" {
 	region = "us-central1"
 }
 
-variable "public" {
+#variable "public" {
 # default = aws_instance.web-server.public_ip
-  type = string
-  default = "public_ip"
-  description = "EC2 Public IP"
-}
+#  type = string
+#  default = "public_ip"
+#  description = "EC2 Public IP"
+#}
 
-variable "private" {
+#variable "private" {
 # default = aws_instance.web-server.private_ip
-  type = string
-  default = "private_ip"
-  description = "EC2 private IP"
-}
+#  type = string
+#  default = "private_ip"
+#  description = "EC2 private IP"
+#}
 
 resource "aws_instance" "web-server" {
 	ami	= "ami-08be951cec06726be"
