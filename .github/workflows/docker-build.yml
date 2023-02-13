@@ -37,7 +37,7 @@ jobs:
        with:
          creds: ${{secrets.AZURE_CREDENTIALS}}
          enable-AzPSSession: true 
-          allow-no-subscriptions: true
+         allow-no-subscriptions: true
  #    - name: run AZ
  #      run: az login  
      - name: Print
