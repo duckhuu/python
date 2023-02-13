@@ -32,7 +32,7 @@ resource "aws_instance" "web-server" {
 	ami	= "ami-08be951cec06726be"
 	instance_type = "t2.micro"
 #	vpc_security_group_ids = "vpc-f7c49692"
-	security_groups = [aws_security_group.allow-http-traffic.id]
+	security_groups = [aws_security_group.allow-web-traffic.id]
 	tags = {
 	 Name = "web-server"
 	}
@@ -49,10 +49,10 @@ resource "aws_instance" "web-server" {
 	 EOF
 }
 
-resource "aws_security_group" "allow-http-traffic" {
+resource "aws_security_group" "allow-web-traffic" {
 
 	name = "allow_http_traffic"
-	description = "allow http traffic"
+	description = "allow web traffic"
 #	vpc_id = "vpc-f7c49692"
 	ingress {
 		description = "Allow port 80"
@@ -68,7 +68,7 @@ resource "aws_security_group" "allow-http-traffic" {
 		cidr_blocks = ["0.0.0.0/0"]
 	}
 	tags = {
-		Name = "allow_http_traffic"	
+		Name = "allow_web_traffic"	
 	}
 	
 }
@@ -81,7 +81,7 @@ resource "null_resource" "get_public_ip" {
 
 resource "null_resource" "get_public_dns" {
 	provisioner "local-exec" {
-		command = "chmod 777 unit.sh && /bin/sh unit.sh && echo ${aws_instance.web-server.public_dns}  && echo ${aws_security_group.allow-http-traffic.id} && echo ${{aws_security_group.allow-http-traffic.name}"
+		command = "chmod 777 unit.sh && /bin/sh unit.sh && echo ${aws_instance.web-server.public_dns}  && echo ${aws_security_group.allow-web-traffic.id} && echo ${{aws_security_group.allow-web-traffic.name}"
 	}
 }
 
