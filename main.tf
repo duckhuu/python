@@ -51,7 +51,7 @@ resource "aws_instance" "web-server" {
 
 resource "aws_security_group" "allow-web-traffic" {
 
-	name = "allow_http_traffic"
+	name = "allow_web_traffic"
 	description = "allow web traffic"
 #	vpc_id = "vpc-f7c49692"
 	ingress {
