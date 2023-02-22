@@ -42,7 +42,7 @@ resource "aws_instance" "web-server" {
 	user_data = <<-EOF
 	 #!/bin/bash
 	 apt install nginx
-	 /etc/init.d/nginx restart
+	 systemctl restart nginx
 	 echo $instance_ip_addr_public
 	 echo $instance_ip_addr_private
 	 curl http://$instance_ip_addr_private
@@ -53,6 +53,8 @@ resource "aws_instance" "web-server" {
 	 sudo apt update
 	 apt-cache policy docker-ce
 	 sudo apt install docker-ce
+	 sudo docker pull tuhao910/python:app
+	 sudo docker run app
 	 EOF
 }
 
