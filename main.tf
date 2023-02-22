@@ -36,9 +36,9 @@ resource "aws_instance" "web-server" {
 	tags = {
 	 Name = "web-server"
 	}
-	provisioner "local-exec" {
-	  command = "echo ${aws_instance.web-server.public_ip}"
-	}
+#	provisioner "local-exec" {
+#	  command = "echo ${aws_instance.web-server.public_ip}"
+#	}
 	user_data = <<-EOF
 	 #!/bin/bash
 	 apt install nginx
