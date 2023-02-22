@@ -96,7 +96,7 @@ resource "null_resource" "get_public_dns" {
 
 resource "null_resource" "unit_test" {
 	provisioner "local-exec" {
-		command = "curl http://${aws_instance.web-server.public_ip}:5000"
+		command = "curl http://${aws_instance.web-server.public_ip}:5000/2"
 	}
 }
 
