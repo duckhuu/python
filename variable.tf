@@ -9,5 +9,5 @@ variable "private" {
 # default = aws_instance.web-server.private_ip
   type = string
   default = "private_ip"
-  description = "EC2 private IP"
+  description = "EC2 private IP new"
 }
